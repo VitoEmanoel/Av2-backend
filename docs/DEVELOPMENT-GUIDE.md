@@ -323,7 +323,7 @@ Cenarios adicionais para reduzir riscos da avaliacao:
 - [x] Falha da BrasilAPI durante a criacao.
 - [x] Falha da BrasilAPI na rota de feriados.
 - [x] Respostas com envelopes padronizados.
-- [ ] Persistencia das alteracoes no banco.
+- [x] Persistencia das alteracoes no banco.
 - [x] Testes nao dependem da disponibilidade real da BrasilAPI.
 
 Verificacao da fase:
