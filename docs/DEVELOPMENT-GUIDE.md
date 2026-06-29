@@ -138,14 +138,14 @@ Erro:
 
 ### Fase 1 - Fundacao do projeto
 
-- [ ] Inicializar o projeto npm.
-- [ ] Instalar dependencias de producao e desenvolvimento.
-- [ ] Configurar TypeScript em modo estrito.
-- [ ] Configurar scripts `dev`, `start`, `init:db` e `test`.
-- [ ] Configurar ESLint e Prettier.
-- [ ] Criar `.gitignore` e impedir o versionamento de `node_modules` e `.env`.
-- [ ] Criar a estrutura inicial de diretorios.
-- [ ] Confirmar que o projeto compila sem erros.
+- [x] Inicializar o projeto npm.
+- [x] Instalar dependencias de producao e desenvolvimento.
+- [x] Configurar TypeScript em modo estrito.
+- [x] Configurar scripts `dev`, `start`, `init:db` e `test`.
+- [x] Configurar ESLint e Prettier.
+- [x] Criar `.gitignore` e impedir o versionamento de `node_modules` e `.env`.
+- [x] Criar a estrutura inicial de diretorios.
+- [x] Confirmar que o projeto compila sem erros.
 
 Verificacao da fase:
 

@@ -1,0 +1,8 @@
+node_modules/
+dist/
+coverage/
+.env
+*.log
+
+# The assessment specification is kept locally and must not be published.
+docs/pbak-aval2.pdf
