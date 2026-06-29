@@ -7,13 +7,13 @@ Este documento transforma o enunciado da segunda avaliacao de Programacao Backen
 - [x] Ler integralmente o enunciado da avaliacao.
 - [x] Definir a stack e a arquitetura inicial.
 - [x] Criar o guia de desenvolvimento e acompanhamento.
-- [ ] Implementar uma fase por vez, respeitando a ordem deste documento.
-- [ ] Executar as verificacoes da fase antes de marca-la como concluida.
-- [ ] Atualizar as caixas deste documento ao concluir cada entrega.
-- [ ] Criar um commit relevante ao final de cada entrega.
-- [ ] Enviar cada commit para o repositorio remoto com `git push`.
-- [ ] Nao agrupar todo o desenvolvimento em um unico commit final.
-- [ ] Manter codigo, identificadores, testes, logs, erros e commits em ingles.
+- [x] Implementar uma fase por vez, respeitando a ordem deste documento.
+- [x] Executar as verificacoes da fase antes de marca-la como concluida.
+- [x] Atualizar as caixas deste documento ao concluir cada entrega.
+- [x] Criar um commit relevante ao final de cada entrega.
+- [x] Enviar cada commit para o repositorio remoto com `git push`.
+- [x] Nao agrupar todo o desenvolvimento em um unico commit final.
+- [x] Manter codigo, identificadores, testes, logs, erros e commits em ingles.
 
 Uma caixa somente deve ser marcada quando a implementacao estiver concluida e verificada. Codigo incompleto ou sem teste nao conta como entrega concluida.
 
@@ -70,16 +70,16 @@ Responsabilidades:
 
 Cada solicitacao deve conter:
 
-- [ ] `id`: UUID unico.
-- [ ] `requesterName`: nome do solicitante.
-- [ ] `origin`: cidade de origem.
-- [ ] `destination`: cidade de destino.
-- [ ] `departureAt`: data e hora de saida.
-- [ ] `returnAt`: data e hora de retorno.
-- [ ] `purpose`: finalidade da viagem.
-- [ ] `passengerCount`: quantidade de passageiros.
-- [ ] `status`: `pending` ou `canceled`.
-- [ ] `createdAt`: data e hora de criacao.
+- [x] `id`: UUID unico.
+- [x] `requesterName`: nome do solicitante.
+- [x] `origin`: cidade de origem.
+- [x] `destination`: cidade de destino.
+- [x] `departureAt`: data e hora de saida.
+- [x] `returnAt`: data e hora de retorno.
+- [x] `purpose`: finalidade da viagem.
+- [x] `passengerCount`: quantidade de passageiros.
+- [x] `status`: `pending` ou `canceled`.
+- [x] `createdAt`: data e hora de criacao.
 
 Datas devem ser recebidas, persistidas e retornadas como ISO 8601 completo em UTC:
 
@@ -89,11 +89,11 @@ YYYY-MM-DDTHH:mm:ss.sssZ
 
 ### 4.2 Endpoints
 
-- [ ] `POST /trip-requests`: criar uma solicitacao.
-- [ ] `GET /trip-requests`: listar todas as solicitacoes.
-- [ ] `GET /trip-requests/:id`: consultar uma solicitacao.
-- [ ] `PATCH /trip-requests/:id/cancel`: cancelar uma solicitacao.
-- [ ] `GET /holidays/:year`: consultar feriados nacionais.
+- [x] `POST /trip-requests`: criar uma solicitacao.
+- [x] `GET /trip-requests`: listar todas as solicitacoes.
+- [x] `GET /trip-requests/:id`: consultar uma solicitacao.
+- [x] `PATCH /trip-requests/:id/cancel`: cancelar uma solicitacao.
+- [x] `GET /holidays/:year`: consultar feriados nacionais.
 
 ### 4.3 Respostas
 
@@ -118,21 +118,21 @@ Erro:
 }
 ```
 
-- [ ] Toda resposta de sucesso segue o envelope obrigatorio.
-- [ ] Toda resposta de erro segue o envelope obrigatorio.
-- [ ] Mensagens de erro estao em ingles.
-- [ ] Nenhuma resposta expoe stack trace, SQL ou detalhes internos.
+- [x] Toda resposta de sucesso segue o envelope obrigatorio.
+- [x] Toda resposta de erro segue o envelope obrigatorio.
+- [x] Mensagens de erro estao em ingles.
+- [x] Nenhuma resposta expoe stack trace, SQL ou detalhes internos.
 
 ### 4.4 Erros e status HTTP
 
-- [ ] `VALIDATION_ERROR`: `400 Bad Request`.
-- [ ] `TRIP_REQUEST_NOT_FOUND`: `404 Not Found`.
-- [ ] `TRIP_REQUEST_ALREADY_CANCELED`: `409 Conflict`.
-- [ ] `HOLIDAY_TRIP_NOT_ALLOWED`: `409 Conflict`.
-- [ ] `HOLIDAYS_API_UNAVAILABLE`: `502 Bad Gateway`.
-- [ ] `INTERNAL_SERVER_ERROR`: `500 Internal Server Error`.
-- [ ] Criacao bem-sucedida: `201 Created`.
-- [ ] Consultas e cancelamento bem-sucedidos: `200 OK`.
+- [x] `VALIDATION_ERROR`: `400 Bad Request`.
+- [x] `TRIP_REQUEST_NOT_FOUND`: `404 Not Found`.
+- [x] `TRIP_REQUEST_ALREADY_CANCELED`: `409 Conflict`.
+- [x] `HOLIDAY_TRIP_NOT_ALLOWED`: `409 Conflict`.
+- [x] `HOLIDAYS_API_UNAVAILABLE`: `502 Bad Gateway`.
+- [x] `INTERNAL_SERVER_ERROR`: `500 Internal Server Error`.
+- [x] Criacao bem-sucedida: `201 Created`.
+- [x] Consultas e cancelamento bem-sucedidos: `200 OK`.
 
 ## 5. Plano de entregas
 
@@ -363,22 +363,22 @@ docs: add project setup and API documentation
 
 ### Fase 11 - Validacao final
 
-- [ ] Executar formatacao e lint.
-- [ ] Compilar o TypeScript.
-- [ ] Executar todos os testes.
-- [ ] Derrubar volumes locais e simular instalacao limpa.
-- [ ] Subir o PostgreSQL somente pelo Docker Compose.
-- [ ] Executar `init:db` duas vezes.
-- [ ] Iniciar a aplicacao seguindo somente o README.
-- [ ] Testar manualmente todos os endpoints.
-- [ ] Verificar formatos ISO 8601 UTC.
-- [ ] Verificar todos os codigos HTTP e codigos internos de erro.
-- [ ] Verificar que a BrasilAPI e consultada de verdade fora dos testes.
-- [ ] Verificar que nenhum segredo ou arquivo `.env` foi versionado.
-- [ ] Verificar que `node_modules` nao foi versionado.
-- [ ] Revisar nomenclatura e idioma.
-- [ ] Revisar o historico de commits.
-- [ ] Confirmar que o repositorio esta publico no GitHub.
+- [x] Executar formatacao e lint.
+- [x] Compilar o TypeScript.
+- [x] Executar todos os testes.
+- [x] Derrubar volumes locais e simular instalacao limpa.
+- [x] Subir o PostgreSQL somente pelo Docker Compose.
+- [x] Executar `init:db` duas vezes.
+- [x] Iniciar a aplicacao seguindo somente o README.
+- [x] Testar manualmente todos os endpoints.
+- [x] Verificar formatos ISO 8601 UTC.
+- [x] Verificar todos os codigos HTTP e codigos internos de erro.
+- [x] Verificar que a BrasilAPI e consultada de verdade fora dos testes.
+- [x] Verificar que nenhum segredo ou arquivo `.env` foi versionado.
+- [x] Verificar que `node_modules` nao foi versionado.
+- [x] Revisar nomenclatura e idioma.
+- [x] Revisar o historico de commits.
+- [x] Confirmar que o repositorio esta publico no GitHub.
 
 Sequencia de validacao limpa:
 
@@ -422,61 +422,61 @@ Tipos de commit adotados:
 
 Regras dos commits:
 
-- [ ] Cada commit representa uma alteracao compreensivel e funcional.
-- [ ] A mensagem e escrita em ingles.
-- [ ] A mensagem explica o que foi entregue.
-- [ ] Testes e implementacao relacionada podem ficar no mesmo commit da funcionalidade.
-- [ ] Arquivos sem relacao com a entrega nao entram no commit.
-- [ ] O commit somente e criado depois das verificacoes aplicaveis.
-- [ ] O push ocorre imediatamente apos o commit validado.
-- [ ] Nao reescrever ou apagar o historico compartilhado.
+- [x] Cada commit representa uma alteracao compreensivel e funcional.
+- [x] A mensagem e escrita em ingles.
+- [x] A mensagem explica o que foi entregue.
+- [x] Testes e implementacao relacionada podem ficar no mesmo commit da funcionalidade.
+- [x] Arquivos sem relacao com a entrega nao entram no commit.
+- [x] O commit somente e criado depois das verificacoes aplicaveis.
+- [x] O push ocorre imediatamente apos o commit validado.
+- [x] Nao reescrever ou apagar o historico compartilhado.
 
 ## 7. Matriz dos criterios de avaliacao
 
 ### Correcao funcional e regras - 30%
 
-- [ ] Criacao, listagem, consulta e cancelamento funcionam.
-- [ ] Todas as regras obrigatorias sao aplicadas.
-- [ ] Dados sao persistidos no PostgreSQL.
+- [x] Criacao, listagem, consulta e cancelamento funcionam.
+- [x] Todas as regras obrigatorias sao aplicadas.
+- [x] Dados sao persistidos no PostgreSQL.
 
 ### Testes automatizados - 30%
 
-- [ ] Todos os cenarios minimos possuem testes Vitest.
-- [ ] Testes sao deterministas e independentes da BrasilAPI real.
-- [ ] `npm test` executa toda a suite.
+- [x] Todos os cenarios minimos possuem testes Vitest.
+- [x] Testes sao deterministas e independentes da BrasilAPI real.
+- [x] `npm test` executa toda a suite.
 
 ### Erros e respostas - 15%
 
-- [ ] Erros sao tratados centralmente.
-- [ ] Todas as respostas seguem o contrato.
-- [ ] Nenhum detalhe interno e exposto.
+- [x] Erros sao tratados centralmente.
+- [x] Todas as respostas seguem o contrato.
+- [x] Nenhum detalhe interno e exposto.
 
 ### Modelagem REST - 10%
 
-- [ ] Rotas, metodos e status HTTP seguem exatamente o enunciado.
-- [ ] O recurso principal se chama `trip-requests`.
+- [x] Rotas, metodos e status HTTP seguem exatamente o enunciado.
+- [x] O recurso principal se chama `trip-requests`.
 
 ### BrasilAPI - 10%
 
-- [ ] A integracao utiliza dados reais da BrasilAPI em execucao normal.
-- [ ] A URL base vem de `HOLIDAYS_API_BASE_URL`.
-- [ ] Falhas externas sao tratadas corretamente.
+- [x] A integracao utiliza dados reais da BrasilAPI em execucao normal.
+- [x] A URL base vem de `HOLIDAYS_API_BASE_URL`.
+- [x] Falhas externas sao tratadas corretamente.
 
 ### Historico de commits - 5%
 
-- [ ] Existem varios commits relevantes.
-- [ ] As mensagens sao claras, objetivas e em ingles.
-- [ ] O historico demonstra desenvolvimento incremental.
+- [x] Existem varios commits relevantes.
+- [x] As mensagens sao claras, objetivas e em ingles.
+- [x] O historico demonstra desenvolvimento incremental.
 
 ## 8. Definicao de produto final
 
 O projeto somente estara pronto quando:
 
 - [ ] Todas as caixas obrigatorias deste guia estiverem concluidas.
-- [ ] O projeto puder ser executado do zero apenas com o README.
-- [ ] O banco for criado e populado sem intervencao manual.
-- [ ] Todos os testes passarem.
-- [ ] Todos os endpoints respeitarem o contrato do PDF.
-- [ ] A integracao real com a BrasilAPI estiver funcional.
-- [ ] O repositorio publico contiver um historico incremental de commits.
+- [x] O projeto puder ser executado do zero apenas com o README.
+- [x] O banco for criado e populado sem intervencao manual.
+- [x] Todos os testes passarem.
+- [x] Todos os endpoints respeitarem o contrato do PDF.
+- [x] A integracao real com a BrasilAPI estiver funcional.
+- [x] O repositorio publico contiver um historico incremental de commits.
 - [ ] Todos os integrantes conseguirem explicar as principais decisoes tecnicas.
