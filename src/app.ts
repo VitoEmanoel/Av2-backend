@@ -1,7 +1,17 @@
 import Fastify, { type FastifyInstance } from 'fastify';
 
-export function buildApp(): FastifyInstance {
-  return Fastify({
-    logger: true,
+import { registerErrorHandler } from './errors/error-handler.js';
+
+interface BuildAppOptions {
+  logger?: boolean;
+}
+
+export function buildApp(options: BuildAppOptions = {}): FastifyInstance {
+  const app = Fastify({
+    logger: options.logger ?? true,
   });
+
+  registerErrorHandler(app);
+
+  return app;
 }

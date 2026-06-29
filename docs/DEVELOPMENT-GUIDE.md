@@ -216,14 +216,14 @@ feat: add idempotent database initialization
 
 ### Fase 4 - Base HTTP e tratamento de erros
 
-- [ ] Criar `app.ts` separado de `server.ts`.
-- [ ] Implementar o servidor Fastify.
-- [ ] Implementar classes ou estruturas de erro da aplicacao.
-- [ ] Implementar handler centralizado de erros.
-- [ ] Padronizar respostas de sucesso.
-- [ ] Padronizar respostas de erro.
-- [ ] Mapear todos os codigos internos para os status HTTP corretos.
-- [ ] Garantir que erros inesperados nao exponham detalhes tecnicos.
+- [x] Criar `app.ts` separado de `server.ts`.
+- [x] Implementar o servidor Fastify.
+- [x] Implementar classes ou estruturas de erro da aplicacao.
+- [x] Implementar handler centralizado de erros.
+- [x] Padronizar respostas de sucesso.
+- [x] Padronizar respostas de erro.
+- [x] Mapear todos os codigos internos para os status HTTP corretos.
+- [x] Garantir que erros inesperados nao exponham detalhes tecnicos.
 
 Commit sugerido:
 
