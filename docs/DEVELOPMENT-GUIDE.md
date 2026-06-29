@@ -162,16 +162,16 @@ chore: initialize TypeScript backend project
 
 ### Fase 2 - Ambiente e PostgreSQL
 
-- [ ] Criar `.env.example` com valores funcionais.
-- [ ] Definir `NODE_ENV=development`.
-- [ ] Definir `PORT=3000`.
-- [ ] Definir `DATABASE_URL` compativel com o Docker Compose.
-- [ ] Definir `HOLIDAYS_API_BASE_URL=https://brasilapi.com.br`.
-- [ ] Criar `docker-compose.yml` com PostgreSQL 16.
-- [ ] Adicionar healthcheck ao servico do banco.
-- [ ] Implementar validacao centralizada das variaveis de ambiente.
-- [ ] Implementar o pool de conexoes PostgreSQL.
-- [ ] Confirmar que o banco sobe e aceita conexoes.
+- [x] Criar `.env.example` com valores funcionais.
+- [x] Definir `NODE_ENV=development`.
+- [x] Definir `PORT=3000`.
+- [x] Definir `DATABASE_URL` compativel com o Docker Compose.
+- [x] Definir `HOLIDAYS_API_BASE_URL=https://brasilapi.com.br`.
+- [x] Criar `docker-compose.yml` com PostgreSQL 16.
+- [x] Adicionar healthcheck ao servico do banco.
+- [x] Implementar validacao centralizada das variaveis de ambiente.
+- [x] Implementar o pool de conexoes PostgreSQL.
+- [x] Confirmar que o banco sobe e aceita conexoes.
 
 Verificacao da fase:
 
