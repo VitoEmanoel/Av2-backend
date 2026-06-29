@@ -74,4 +74,29 @@ export class PostgresTripRequestsRepository implements TripRequestsRepository {
 
     return mapTripRequest(row);
   }
+
+  async findAll(): Promise<TripRequest[]> {
+    const result = await this.database.query<TripRequestRow>(`
+      SELECT *
+      FROM trip_requests
+      ORDER BY created_at ASC, id ASC
+    `);
+
+    return result.rows.map(mapTripRequest);
+  }
+
+  async findById(id: string): Promise<TripRequest | null> {
+    const result = await this.database.query<TripRequestRow>(
+      `
+        SELECT *
+        FROM trip_requests
+        WHERE id = $1
+      `,
+      [id],
+    );
+
+    const row = result.rows[0];
+
+    return row === undefined ? null : mapTripRequest(row);
+  }
 }

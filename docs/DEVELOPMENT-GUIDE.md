@@ -272,12 +272,12 @@ feat: implement trip request creation
 
 ### Fase 7 - Consultas de solicitacoes
 
-- [ ] Implementar `GET /trip-requests`.
-- [ ] Retornar todos os registros persistidos.
-- [ ] Retornar uma lista vazia quando nao houver registros.
-- [ ] Implementar `GET /trip-requests/:id`.
-- [ ] Retornar `TRIP_REQUEST_NOT_FOUND` para recurso inexistente.
-- [ ] Normalizar todas as datas retornadas para UTC com sufixo `Z`.
+- [x] Implementar `GET /trip-requests`.
+- [x] Retornar todos os registros persistidos.
+- [x] Retornar uma lista vazia quando nao houver registros.
+- [x] Implementar `GET /trip-requests/:id`.
+- [x] Retornar `TRIP_REQUEST_NOT_FOUND` para recurso inexistente.
+- [x] Normalizar todas as datas retornadas para UTC com sufixo `Z`.
 
 Commit sugerido:
 
@@ -309,7 +309,7 @@ Cenarios minimos obrigatorios:
 - [x] Retorno anterior a saida.
 - [x] Quantidade de passageiros menor ou igual a zero.
 - [x] Saida em feriado nacional.
-- [ ] Consulta de solicitacao inexistente.
+- [x] Consulta de solicitacao inexistente.
 - [ ] Cancelamento de solicitacao existente.
 - [ ] Tentativa de cancelar solicitacao ja cancelada.
 
@@ -318,7 +318,7 @@ Cenarios adicionais para reduzir riscos da avaliacao:
 - [x] Campos obrigatorios ausentes.
 - [x] Data em formato invalido.
 - [x] Normalizacao de data com offset para UTC.
-- [ ] Lista vazia de solicitacoes.
+- [x] Lista vazia de solicitacoes.
 - [ ] Cancelamento de solicitacao inexistente.
 - [x] Falha da BrasilAPI durante a criacao.
 - [x] Falha da BrasilAPI na rota de feriados.

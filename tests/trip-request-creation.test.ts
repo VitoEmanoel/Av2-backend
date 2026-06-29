@@ -37,7 +37,11 @@ function createTestContext(holidaysClient?: HolidaysClient): {
   const create = vi.fn<(tripRequest: TripRequest) => Promise<TripRequest>>(
     (tripRequest) => Promise.resolve(tripRequest),
   );
-  const tripRequestsRepository: TripRequestsRepository = { create };
+  const tripRequestsRepository: TripRequestsRepository = {
+    create,
+    findAll: () => Promise.resolve([]),
+    findById: () => Promise.resolve(null),
+  };
   const app = buildApp({
     holidaysClient: holidaysClient ?? { getHolidays },
     logger: false,

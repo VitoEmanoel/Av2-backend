@@ -22,3 +22,7 @@ export const createTripRequestSchema = z
       new Date(input.departureAt).getTime(),
     { path: ['returnAt'] },
   );
+
+export const tripRequestIdParamsSchema = z.object({
+  id: z.uuid(),
+});

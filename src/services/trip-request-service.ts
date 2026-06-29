@@ -51,4 +51,18 @@ export class TripRequestService {
       createdAt: this.now().toISOString(),
     });
   }
+
+  async findAll(): Promise<TripRequest[]> {
+    return this.tripRequestsRepository.findAll();
+  }
+
+  async findById(id: string): Promise<TripRequest> {
+    const tripRequest = await this.tripRequestsRepository.findById(id);
+
+    if (tripRequest === null) {
+      throw new AppError('TRIP_REQUEST_NOT_FOUND');
+    }
+
+    return tripRequest;
+  }
 }

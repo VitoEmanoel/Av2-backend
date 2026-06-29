@@ -3,7 +3,10 @@ import type { FastifyInstance } from 'fastify';
 import { AppError } from '../../errors/app-error.js';
 import type { TripRequestService } from '../../services/trip-request-service.js';
 import { successResponse } from '../responses.js';
-import { createTripRequestSchema } from '../schemas/trip-request-schemas.js';
+import {
+  createTripRequestSchema,
+  tripRequestIdParamsSchema,
+} from '../schemas/trip-request-schemas.js';
 
 export function registerTripRequestsRoutes(
   app: FastifyInstance,
@@ -19,5 +22,23 @@ export function registerTripRequestsRoutes(
     const tripRequest = await tripRequestService.create(input.data);
 
     return reply.status(201).send(successResponse(tripRequest));
+  });
+
+  app.get('/trip-requests', async () => {
+    const tripRequests = await tripRequestService.findAll();
+
+    return successResponse(tripRequests);
+  });
+
+  app.get('/trip-requests/:id', async (request) => {
+    const params = tripRequestIdParamsSchema.safeParse(request.params);
+
+    if (!params.success) {
+      throw new AppError('VALIDATION_ERROR');
+    }
+
+    const tripRequest = await tripRequestService.findById(params.data.id);
+
+    return successResponse(tripRequest);
   });
 }

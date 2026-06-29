@@ -25,6 +25,8 @@ function createTestApp(
 ): ReturnType<typeof buildApp> {
   const tripRequestsRepository: TripRequestsRepository = {
     create: (tripRequest) => Promise.resolve(tripRequest),
+    findAll: () => Promise.resolve([]),
+    findById: () => Promise.resolve(null),
   };
   const app = buildApp({
     holidaysClient,
