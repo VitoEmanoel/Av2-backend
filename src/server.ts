@@ -1,7 +1,11 @@
 import { buildApp } from './app.js';
 import { env } from './config/env.js';
+import { BrasilApiHolidaysClient } from './integrations/brasil-api-holidays-client.js';
 
-const app = buildApp();
+const holidaysClient = new BrasilApiHolidaysClient({
+  baseUrl: env.HOLIDAYS_API_BASE_URL,
+});
+const app = buildApp({ holidaysClient });
 
 try {
   await app.listen({ host: '0.0.0.0', port: env.PORT });

@@ -233,15 +233,15 @@ feat: add HTTP server and centralized error handling
 
 ### Fase 5 - Integracao com a BrasilAPI
 
-- [ ] Criar um cliente de feriados isolado das rotas.
-- [ ] Utilizar `HOLIDAYS_API_BASE_URL` na construcao da URL.
-- [ ] Consumir `GET /api/feriados/v1/{ano}`.
-- [ ] Validar a resposta recebida da BrasilAPI.
-- [ ] Tratar timeout, falha de rede e resposta HTTP invalida.
-- [ ] Converter falhas externas em `HOLIDAYS_API_UNAVAILABLE`.
-- [ ] Permitir a substituicao do cliente por fake ou mock nos testes.
-- [ ] Nao usar feriados estaticos ou hardcoded.
-- [ ] Implementar `GET /holidays/:year`.
+- [x] Criar um cliente de feriados isolado das rotas.
+- [x] Utilizar `HOLIDAYS_API_BASE_URL` na construcao da URL.
+- [x] Consumir `GET /api/feriados/v1/{ano}`.
+- [x] Validar a resposta recebida da BrasilAPI.
+- [x] Tratar timeout, falha de rede e resposta HTTP invalida.
+- [x] Converter falhas externas em `HOLIDAYS_API_UNAVAILABLE`.
+- [x] Permitir a substituicao do cliente por fake ou mock nos testes.
+- [x] Nao usar feriados estaticos ou hardcoded.
+- [x] Implementar `GET /holidays/:year`.
 
 Commit sugerido:
 

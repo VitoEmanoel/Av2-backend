@@ -7,6 +7,7 @@ import {
   type ErrorCode,
 } from '../src/errors/error-definitions.js';
 import { successResponse } from '../src/http/responses.js';
+import type { HolidaysClient } from '../src/integrations/holidays-client.js';
 
 const apps = [] as ReturnType<typeof buildApp>[];
 
@@ -15,7 +16,10 @@ afterEach(async () => {
 });
 
 function createTestApp(): ReturnType<typeof buildApp> {
-  const app = buildApp({ logger: false });
+  const holidaysClient: HolidaysClient = {
+    getHolidays: () => Promise.resolve([]),
+  };
+  const app = buildApp({ holidaysClient, logger: false });
   apps.push(app);
   return app;
 }
