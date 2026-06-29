@@ -11,6 +11,7 @@ import type {
   Holiday,
   HolidaysClient,
 } from '../src/integrations/holidays-client.js';
+import type { TripRequestsRepository } from '../src/repositories/trip-requests-repository.js';
 
 const apps = [] as ReturnType<typeof buildApp>[];
 
@@ -22,7 +23,14 @@ afterEach(async () => {
 function createTestApp(
   holidaysClient: HolidaysClient,
 ): ReturnType<typeof buildApp> {
-  const app = buildApp({ holidaysClient, logger: false });
+  const tripRequestsRepository: TripRequestsRepository = {
+    create: (tripRequest) => Promise.resolve(tripRequest),
+  };
+  const app = buildApp({
+    holidaysClient,
+    logger: false,
+    tripRequestsRepository,
+  });
   apps.push(app);
   return app;
 }

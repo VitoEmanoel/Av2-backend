@@ -251,18 +251,18 @@ feat: integrate national holidays API
 
 ### Fase 6 - Criacao de solicitacoes
 
-- [ ] Validar todos os campos obrigatorios.
-- [ ] Rejeitar strings vazias onde nao forem permitidas.
-- [ ] Validar e normalizar `departureAt` e `returnAt` para UTC.
-- [ ] Rejeitar `returnAt` anterior a `departureAt`.
-- [ ] Rejeitar `passengerCount` menor ou igual a zero.
-- [ ] Extrair a data civil de `departureAt` ja normalizada.
-- [ ] Consultar os feriados do ano da saida.
-- [ ] Rejeitar saida em feriado com `HOLIDAY_TRIP_NOT_ALLOWED`.
-- [ ] Nao persistir a solicitacao se a BrasilAPI falhar.
-- [ ] Criar toda solicitacao com status `pending`.
-- [ ] Persistir a solicitacao no PostgreSQL.
-- [ ] Retornar `201 Created` e o recurso criado.
+- [x] Validar todos os campos obrigatorios.
+- [x] Rejeitar strings vazias onde nao forem permitidas.
+- [x] Validar e normalizar `departureAt` e `returnAt` para UTC.
+- [x] Rejeitar `returnAt` anterior a `departureAt`.
+- [x] Rejeitar `passengerCount` menor ou igual a zero.
+- [x] Extrair a data civil de `departureAt` ja normalizada.
+- [x] Consultar os feriados do ano da saida.
+- [x] Rejeitar saida em feriado com `HOLIDAY_TRIP_NOT_ALLOWED`.
+- [x] Nao persistir a solicitacao se a BrasilAPI falhar.
+- [x] Criar toda solicitacao com status `pending`.
+- [x] Persistir a solicitacao no PostgreSQL.
+- [x] Retornar `201 Created` e o recurso criado.
 
 Commit sugerido:
 
@@ -305,26 +305,26 @@ feat: implement trip request cancellation
 
 Cenarios minimos obrigatorios:
 
-- [ ] Criacao de solicitacao valida.
-- [ ] Retorno anterior a saida.
-- [ ] Quantidade de passageiros menor ou igual a zero.
-- [ ] Saida em feriado nacional.
+- [x] Criacao de solicitacao valida.
+- [x] Retorno anterior a saida.
+- [x] Quantidade de passageiros menor ou igual a zero.
+- [x] Saida em feriado nacional.
 - [ ] Consulta de solicitacao inexistente.
 - [ ] Cancelamento de solicitacao existente.
 - [ ] Tentativa de cancelar solicitacao ja cancelada.
 
 Cenarios adicionais para reduzir riscos da avaliacao:
 
-- [ ] Campos obrigatorios ausentes.
-- [ ] Data em formato invalido.
-- [ ] Normalizacao de data com offset para UTC.
+- [x] Campos obrigatorios ausentes.
+- [x] Data em formato invalido.
+- [x] Normalizacao de data com offset para UTC.
 - [ ] Lista vazia de solicitacoes.
 - [ ] Cancelamento de solicitacao inexistente.
-- [ ] Falha da BrasilAPI durante a criacao.
-- [ ] Falha da BrasilAPI na rota de feriados.
-- [ ] Respostas com envelopes padronizados.
+- [x] Falha da BrasilAPI durante a criacao.
+- [x] Falha da BrasilAPI na rota de feriados.
+- [x] Respostas com envelopes padronizados.
 - [ ] Persistencia das alteracoes no banco.
-- [ ] Testes nao dependem da disponibilidade real da BrasilAPI.
+- [x] Testes nao dependem da disponibilidade real da BrasilAPI.
 
 Verificacao da fase:
 

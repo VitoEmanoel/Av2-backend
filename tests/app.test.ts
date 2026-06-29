@@ -8,6 +8,7 @@ import {
 } from '../src/errors/error-definitions.js';
 import { successResponse } from '../src/http/responses.js';
 import type { HolidaysClient } from '../src/integrations/holidays-client.js';
+import type { TripRequestsRepository } from '../src/repositories/trip-requests-repository.js';
 
 const apps = [] as ReturnType<typeof buildApp>[];
 
@@ -19,7 +20,14 @@ function createTestApp(): ReturnType<typeof buildApp> {
   const holidaysClient: HolidaysClient = {
     getHolidays: () => Promise.resolve([]),
   };
-  const app = buildApp({ holidaysClient, logger: false });
+  const tripRequestsRepository: TripRequestsRepository = {
+    create: (tripRequest) => Promise.resolve(tripRequest),
+  };
+  const app = buildApp({
+    holidaysClient,
+    logger: false,
+    tripRequestsRepository,
+  });
   apps.push(app);
   return app;
 }
