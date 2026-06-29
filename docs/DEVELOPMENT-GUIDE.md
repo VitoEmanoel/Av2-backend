@@ -189,17 +189,17 @@ chore: configure PostgreSQL development environment
 
 ### Fase 3 - Schema e inicializacao do banco
 
-- [ ] Criar a tabela `trip_requests`.
-- [ ] Usar UUID como chave primaria.
-- [ ] Usar `TIMESTAMPTZ` para datas e horas.
-- [ ] Restringir o status a `pending` e `canceled`.
-- [ ] Validar `passenger_count > 0` no banco como protecao adicional.
-- [ ] Criar o script `init:db`.
-- [ ] Tornar a criacao das estruturas idempotente.
-- [ ] Inserir pelo menos 10 solicitacoes de viagem.
-- [ ] Tornar a populacao idempotente.
-- [ ] Nao inserir ou espelhar feriados no `init:db`.
-- [ ] Confirmar que o script pode ser executado duas vezes sem falhar ou duplicar dados.
+- [x] Criar a tabela `trip_requests`.
+- [x] Usar UUID como chave primaria.
+- [x] Usar `TIMESTAMPTZ` para datas e horas.
+- [x] Restringir o status a `pending` e `canceled`.
+- [x] Validar `passenger_count > 0` no banco como protecao adicional.
+- [x] Criar o script `init:db`.
+- [x] Tornar a criacao das estruturas idempotente.
+- [x] Inserir pelo menos 10 solicitacoes de viagem.
+- [x] Tornar a populacao idempotente.
+- [x] Nao inserir ou espelhar feriados no `init:db`.
+- [x] Confirmar que o script pode ser executado duas vezes sem falhar ou duplicar dados.
 
 Verificacao da fase:
 
