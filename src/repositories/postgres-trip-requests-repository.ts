@@ -1,7 +1,10 @@
 import type { Pool } from 'pg';
 
 import type { TripRequest } from '../domain/trip-request.js';
-import type { TripRequestsRepository } from './trip-requests-repository.js';
+import type {
+  CancelTripRequestResult,
+  TripRequestsRepository,
+} from './trip-requests-repository.js';
 
 interface TripRequestRow {
   id: string;
@@ -33,6 +36,61 @@ function mapTripRequest(row: TripRequestRow): TripRequest {
 
 export class PostgresTripRequestsRepository implements TripRequestsRepository {
   constructor(private readonly database: Pool) {}
+
+  async cancel(id: string): Promise<CancelTripRequestResult> {
+    const client = await this.database.connect();
+
+    try {
+      await client.query('BEGIN');
+      const selectedResult = await client.query<TripRequestRow>(
+        `
+          SELECT *
+          FROM trip_requests
+          WHERE id = $1
+          FOR UPDATE
+        `,
+        [id],
+      );
+      const selectedRow = selectedResult.rows[0];
+
+      if (selectedRow === undefined) {
+        await client.query('COMMIT');
+        return { outcome: 'not_found' };
+      }
+
+      if (selectedRow.status === 'canceled') {
+        await client.query('COMMIT');
+        return { outcome: 'already_canceled' };
+      }
+
+      const updatedResult = await client.query<TripRequestRow>(
+        `
+          UPDATE trip_requests
+          SET status = 'canceled'
+          WHERE id = $1
+          RETURNING *
+        `,
+        [id],
+      );
+      const updatedRow = updatedResult.rows[0];
+
+      if (updatedRow === undefined) {
+        throw new Error('Database did not return the canceled trip request');
+      }
+
+      await client.query('COMMIT');
+
+      return {
+        outcome: 'canceled',
+        tripRequest: mapTripRequest(updatedRow),
+      };
+    } catch (error) {
+      await client.query('ROLLBACK');
+      throw error;
+    } finally {
+      client.release();
+    }
+  }
 
   async create(tripRequest: TripRequest): Promise<TripRequest> {
     const result = await this.database.query<TripRequestRow>(

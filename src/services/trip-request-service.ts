@@ -28,6 +28,20 @@ export class TripRequestService {
     this.tripRequestsRepository = options.tripRequestsRepository;
   }
 
+  async cancel(id: string): Promise<TripRequest> {
+    const result = await this.tripRequestsRepository.cancel(id);
+
+    if (result.outcome === 'not_found') {
+      throw new AppError('TRIP_REQUEST_NOT_FOUND');
+    }
+
+    if (result.outcome === 'already_canceled') {
+      throw new AppError('TRIP_REQUEST_ALREADY_CANCELED');
+    }
+
+    return result.tripRequest;
+  }
+
   async create(input: CreateTripRequestInput): Promise<TripRequest> {
     if (
       input.passengerCount <= 0 ||

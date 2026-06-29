@@ -41,4 +41,16 @@ export function registerTripRequestsRoutes(
 
     return successResponse(tripRequest);
   });
+
+  app.patch('/trip-requests/:id/cancel', async (request) => {
+    const params = tripRequestIdParamsSchema.safeParse(request.params);
+
+    if (!params.success) {
+      throw new AppError('VALIDATION_ERROR');
+    }
+
+    const tripRequest = await tripRequestService.cancel(params.data.id);
+
+    return successResponse(tripRequest);
+  });
 }

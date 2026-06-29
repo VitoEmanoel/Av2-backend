@@ -46,6 +46,7 @@ function createRepository(options?: {
   selectedRecord?: TripRequest | null;
 }): TripRequestsRepository {
   return {
+    cancel: () => Promise.resolve({ outcome: 'not_found' }),
     create: (tripRequest) => Promise.resolve(tripRequest),
     findAll: () => Promise.resolve(options?.records ?? []),
     findById: () => Promise.resolve(options?.selectedRecord ?? null),

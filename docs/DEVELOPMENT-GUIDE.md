@@ -287,13 +287,13 @@ feat: implement trip request queries
 
 ### Fase 8 - Cancelamento
 
-- [ ] Implementar `PATCH /trip-requests/:id/cancel`.
-- [ ] Retornar `TRIP_REQUEST_NOT_FOUND` para recurso inexistente.
-- [ ] Retornar `TRIP_REQUEST_ALREADY_CANCELED` quando aplicavel.
-- [ ] Alterar somente `pending` para `canceled`.
-- [ ] Persistir o cancelamento no banco.
-- [ ] Retornar `200 OK` e o recurso atualizado.
-- [ ] Evitar condicao de corrida no cancelamento.
+- [x] Implementar `PATCH /trip-requests/:id/cancel`.
+- [x] Retornar `TRIP_REQUEST_NOT_FOUND` para recurso inexistente.
+- [x] Retornar `TRIP_REQUEST_ALREADY_CANCELED` quando aplicavel.
+- [x] Alterar somente `pending` para `canceled`.
+- [x] Persistir o cancelamento no banco.
+- [x] Retornar `200 OK` e o recurso atualizado.
+- [x] Evitar condicao de corrida no cancelamento.
 
 Commit sugerido:
 
@@ -310,8 +310,8 @@ Cenarios minimos obrigatorios:
 - [x] Quantidade de passageiros menor ou igual a zero.
 - [x] Saida em feriado nacional.
 - [x] Consulta de solicitacao inexistente.
-- [ ] Cancelamento de solicitacao existente.
-- [ ] Tentativa de cancelar solicitacao ja cancelada.
+- [x] Cancelamento de solicitacao existente.
+- [x] Tentativa de cancelar solicitacao ja cancelada.
 
 Cenarios adicionais para reduzir riscos da avaliacao:
 
@@ -319,7 +319,7 @@ Cenarios adicionais para reduzir riscos da avaliacao:
 - [x] Data em formato invalido.
 - [x] Normalizacao de data com offset para UTC.
 - [x] Lista vazia de solicitacoes.
-- [ ] Cancelamento de solicitacao inexistente.
+- [x] Cancelamento de solicitacao inexistente.
 - [x] Falha da BrasilAPI durante a criacao.
 - [x] Falha da BrasilAPI na rota de feriados.
 - [x] Respostas com envelopes padronizados.

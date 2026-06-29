@@ -38,6 +38,7 @@ function createTestContext(holidaysClient?: HolidaysClient): {
     (tripRequest) => Promise.resolve(tripRequest),
   );
   const tripRequestsRepository: TripRequestsRepository = {
+    cancel: () => Promise.resolve({ outcome: 'not_found' }),
     create,
     findAll: () => Promise.resolve([]),
     findById: () => Promise.resolve(null),

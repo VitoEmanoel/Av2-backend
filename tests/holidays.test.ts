@@ -24,6 +24,7 @@ function createTestApp(
   holidaysClient: HolidaysClient,
 ): ReturnType<typeof buildApp> {
   const tripRequestsRepository: TripRequestsRepository = {
+    cancel: () => Promise.resolve({ outcome: 'not_found' }),
     create: (tripRequest) => Promise.resolve(tripRequest),
     findAll: () => Promise.resolve([]),
     findById: () => Promise.resolve(null),
