@@ -340,20 +340,20 @@ test: cover trip request API behavior
 
 ### Fase 10 - Documentacao do repositorio
 
-- [ ] Informar o nome da equipe, se existir.
-- [ ] Informar o nome completo de todos os integrantes.
-- [ ] Descrever a API.
-- [ ] Listar as tecnologias utilizadas.
-- [ ] Informar PostgreSQL como SGBD.
-- [ ] Informar npm como gerenciador de pacotes.
-- [ ] Documentar a instalacao das dependencias.
-- [ ] Documentar a configuracao do `.env` sem edicao manual.
-- [ ] Documentar a inicializacao do Docker Compose.
-- [ ] Documentar `init:db`.
-- [ ] Documentar execucao em desenvolvimento e producao.
-- [ ] Documentar a execucao dos testes.
-- [ ] Documentar todos os endpoints, corpos e respostas.
-- [ ] Confirmar que os comandos documentados funcionam em sequencia.
+- [x] Informar o nome da equipe, se existir.
+- [x] Informar o nome completo de todos os integrantes.
+- [x] Descrever a API.
+- [x] Listar as tecnologias utilizadas.
+- [x] Informar PostgreSQL como SGBD.
+- [x] Informar npm como gerenciador de pacotes.
+- [x] Documentar a instalacao das dependencias.
+- [x] Documentar a configuracao do `.env` sem edicao manual.
+- [x] Documentar a inicializacao do Docker Compose.
+- [x] Documentar `init:db`.
+- [x] Documentar execucao em desenvolvimento e producao.
+- [x] Documentar a execucao dos testes.
+- [x] Documentar todos os endpoints, corpos e respostas.
+- [x] Confirmar que os comandos documentados funcionam em sequencia.
 
 Commit sugerido:
 
